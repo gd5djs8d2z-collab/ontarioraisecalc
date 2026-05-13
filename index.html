@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ontario Raise Calculator 2026 — How Much of Your Raise Do You Keep?</title>
+  <meta name="description" content="Calculate how much of your raise you actually keep after Ontario income tax, federal tax, CPP, and EI deductions. 2026 CRA and ESDC rates. Instant results.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ontarioraisecalc.ca/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ontario Raise Calculator 2026 — How Much Do You Keep?">
+  <meta property="og:description" content="Enter your current and new salary to see your real after-tax raise in Ontario. 2026 CRA rates.">
+  <meta property="og:url" content="https://ontarioraisecalc.ca/">
+  <meta property="og:site_name" content="Ontario Raise Calculator">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Ontario Raise Calculator 2026 — How Much Do You Keep?">
+  <meta name="twitter:description" content="Enter your current and new salary to see your real after-tax raise in Ontario. 2026 CRA rates.">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- AdSense -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
+
+  <!-- Schema: WebApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Ontario Raise Calculator",
+    "url": "https://ontarioraisecalc.ca/",
+    "applicationCategory": "FinanceApplication",
+    "operatingSystem": "All",
+    "description": "Calculate how much of your raise you actually keep after Ontario income tax, federal income tax, CPP, and EI deductions. 2026 CRA-sourced rates.",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "CAD" },
+    "creator": { "@type": "Organization", "name": "Calc-HQ.ca", "url": "https://calc-hq.ca" }
+  }
+  </script>
+
+  <!-- FAQ Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Why is my raise smaller than expected after taxes?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Because raises are taxed at your marginal rate, not your average rate. In Ontario, if your raise pushes income into a higher bracket, that portion is taxed at a higher percentage — plus CPP and EI take additional slices on lower income levels." }
+      },
+      {
+        "@type": "Question",
+        "name": "What is the effective tax rate on a raise?",
+        "acceptedAnswer": { "@type": "Answer", "text": "The effective tax/deduction rate on your raise equals 1 minus (net increase ÷ gross raise). This shows the marginal impact on the raise amount only — always higher than your blended effective rate on total income." }
+      },
+      {
+        "@type": "Question",
+        "name": "Does CPP or EI affect my raise calculation?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Only if your salary is below the CPP or EI ceiling. CPP applies on earnings between $3,500 and $74,600 (2026 YMPE). CPP2 applies between $74,600 and $85,000. EI premiums apply on earnings up to $68,900. If your current salary already exceeds these ceilings, a raise will not trigger additional CPP or EI." }
+      },
+      {
+        "@type": "Question",
+        "name": "Is this calculator accurate for 2026?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes. Uses 2026 CRA federal brackets (14% bottom rate), Ontario provincial brackets, Ontario surtax thresholds ($5,818 and $7,446), and 2026 ESDC CPP/EI rates. Sources: CRA T4032-ON and Ontario Ministry of Finance." }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="container">
+    <div class="header-inner">
+      <a href="/" class="logo">
+        <span class="logo-icon">🍁</span>
+        Ontario Raise Calculator
+        <span class="year-badge">2026</span>
+      </a>
+      <nav class="header-nav" aria-label="Site navigation">
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="content-width">
+      <h1>Ontario Raise Calculator</h1>
+      <p>How much of your raise do you actually keep? Enter your current and new salary to see your exact after-tax gain — Ontario 2026 rates.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR CARD (overlaps hero) -->
+<div class="container">
+  <div class="content-width">
+    <div class="calc-card" id="calculator">
+
+      <!-- INPUTS -->
+      <div class="calc-form-section">
+
+        <!-- Trust strip -->
+        <div class="trust-strip">
+          <span class="ts-item"><span class="ts-check">✓</span> 2026 CRA federal brackets</span>
+          <span class="ts-sep">·</span>
+          <span class="ts-item"><span class="ts-check">✓</span> Ontario provincial + surtax</span>
+          <span class="ts-sep">·</span>
+          <span class="ts-item"><span class="ts-check">✓</span> CPP / CPP2 / EI</span>
+          <span class="ts-sep">·</span>
+          <span class="ts-item"><span class="ts-check">✓</span> Estimates only — not tax advice</span>
+        </div>
+
+        <form id="raise-form" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="current-salary">Current Annual Salary</label>
+              <div class="input-prefix-wrap">
+                <span class="input-prefix">$</span>
+                <input type="text" id="current-salary" name="current-salary"
+                       inputmode="decimal" autocomplete="off"
+                       placeholder="75,000" aria-describedby="current-salary-hint">
+              </div>
+              <span class="field-hint" id="current-salary-hint">Gross annual salary before the raise</span>
+            </div>
+
+            <div class="form-group">
+              <label for="new-salary">New Annual Salary</label>
+              <div class="input-prefix-wrap">
+                <span class="input-prefix">$</span>
+                <input type="text" id="new-salary" name="new-salary"
+                       inputmode="decimal" autocomplete="off"
+                       placeholder="82,000" aria-describedby="new-salary-hint">
+              </div>
+              <span class="field-hint" id="new-salary-hint">Gross annual salary after the raise</span>
+            </div>
+
+            <div class="form-group full">
+              <label for="pay-frequency">Pay Frequency</label>
+              <select id="pay-frequency" name="pay-frequency">
+                <option value="biweekly" selected>Every 2 weeks — bi-weekly (26×/year)</option>
+                <option value="weekly">Weekly (52×/year)</option>
+                <option value="semimonthly">Semi-monthly (24×/year)</option>
+                <option value="monthly">Monthly (12×/year)</option>
+                <option value="annual">Annual lump sum</option>
+              </select>
+            </div>
+          </div>
+
+          <p id="calc-error" class="calc-error" role="alert" hidden></p>
+
+          <div class="btn-row">
+            <button type="submit" class="calc-btn">Calculate my raise</button>
+            <button type="button" id="reset-btn" class="reset-btn">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- RESULTS -->
+      <div class="calc-results-section" id="result-section" hidden>
+
+        <!-- Plain-English summary -->
+        <div class="result-summary" id="res-summary"></div>
+
+        <!-- Net raise headline -->
+        <div class="results-header">
+          <div class="net-raise-display">
+            <div class="net-raise-label">Net Annual Raise</div>
+            <div class="net-raise-amount" id="res-net-annual">—</div>
+            <div class="net-raise-sub">After all deductions</div>
+          </div>
+          <div class="effective-rate-chip" id="res-effective-rate-chip">—% taken by deductions</div>
+        </div>
+
+        <!-- Period cards -->
+        <div class="period-grid">
+          <div class="period-card highlight">
+            <span class="period-card-label">Per pay period</span>
+            <span class="period-card-amount" id="res-net-perpay">—</span>
+            <span class="period-card-sub" id="res-perpay-label">bi-weekly</span>
+          </div>
+          <div class="period-card">
+            <span class="period-card-label">Per month</span>
+            <span class="period-card-amount" id="res-net-monthly">—</span>
+            <span class="period-card-sub">net increase</span>
+          </div>
+          <div class="period-card">
+            <span class="period-card-label">Deduction rate</span>
+            <span class="period-card-amount" id="res-effective-rate">—</span>
+            <span class="period-card-sub">on your raise</span>
+          </div>
+        </div>
+
+        <!-- Breakdown table -->
+        <div class="section-label" style="margin-bottom:8px">Where your raise goes</div>
+        <div class="results-breakdown">
+          <div class="breakdown-row section-header">Your raise — annual gross vs. deductions</div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Gross raise</span>
+            <span class="breakdown-value" id="res-gross-raise">—</span>
+          </div>
+          <div class="breakdown-row section-header">Deductions on the raise</div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Additional federal income tax</span>
+            <span class="breakdown-value deduction-amount" id="res-federal-diff">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Additional Ontario income tax</span>
+            <span class="breakdown-value deduction-amount" id="res-ontario-diff">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Additional CPP / CPP2</span>
+            <span class="breakdown-value deduction-amount" id="res-cpp-diff">—</span>
+          </div>
+          <div class="breakdown-row">
+            <span class="breakdown-label">Additional EI premium</span>
+            <span class="breakdown-value deduction-amount" id="res-ei-diff">—</span>
+          </div>
+          <div class="breakdown-row total">
+            <span class="breakdown-label">Net raise (take-home)</span>
+            <span class="breakdown-value" id="res-net-annual-2">—</span>
+          </div>
+        </div>
+
+        <!-- Before / After -->
+        <div class="section-label" style="margin-bottom:8px">Before vs. after your raise</div>
+        <div class="before-after-grid">
+          <div class="ba-card">
+            <span class="ba-label">Current salary</span>
+            <span class="ba-gross" id="res-current-gross">—</span>
+            <span class="ba-sublabel">Annual net income</span>
+            <span class="ba-net" id="res-current-net">—</span>
+          </div>
+          <div class="ba-arrow">→</div>
+          <div class="ba-card new">
+            <span class="ba-label">New salary</span>
+            <span class="ba-gross" id="res-new-gross">—</span>
+            <span class="ba-sublabel">Annual net income</span>
+            <span class="ba-net" id="res-new-net">—</span>
+          </div>
+        </div>
+
+        <p class="disclaimer-note">
+          Incremental deductions shown — not total annual deductions. Applies 2026 CRA federal brackets,
+          Ontario provincial brackets, Ontario surtax, CPP/CPP2, and EI. Basic personal amounts only.
+          Does not include RRSP, OHP, or other credits. Estimates only — not tax advice.
+        </p>
+
+      </div><!-- /calc-results-section -->
+    </div><!-- /calc-card -->
+  </div>
+</div>
+
+<!-- Ad slot: post-calculator -->
+<div class="container">
+  <div class="ad-unit" aria-hidden="true">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7744853829365165"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- PAGE CONTENT -->
+<div class="page-content">
+  <div class="container">
+    <div class="content-width">
+
+      <!-- Why your raise feels smaller -->
+      <div class="section">
+        <div class="section-label">Understanding Your Results</div>
+        <h2>Why your raise feels smaller than expected</h2>
+        <p>The number on your offer letter is a <strong>gross</strong> amount. Your bank account receives the <strong>net</strong>. Between those two numbers sit federal income tax, Ontario provincial income tax, CPP contributions, and EI premiums — each of which takes a slice of every dollar you earn.</p>
+        <p>The critical point: your raise is not taxed at your blended effective rate. It is taxed at your <strong>marginal rate</strong> — the rate that applies to the highest slice of your income. If a $7,000 raise pushes income from $110,000 to $117,000 in Ontario, that $7,000 sits in the 43.4% combined marginal bracket (federal 26% + Ontario 11.16% + Ontario surtax).</p>
+
+        <h3>The 2026 rate change that helps you</h3>
+        <p>For 2026, the federal bottom tax rate dropped from 14.5% (2025) to <strong>14%</strong> — the first reduction to the federal bottom bracket since 2016. If your raise keeps you below $58,523, you benefit from this change.</p>
+
+        <h3>When CPP and EI stop being deducted</h3>
+        <p>CPP contributions stop once your earnings hit <strong>$74,600</strong> (2026 YMPE). CPP2 contributions stop at <strong>$85,000</strong> (YAMPE). EI premiums stop at <strong>$68,900</strong>. If your current salary already exceeds these thresholds, your raise will not trigger additional CPP or EI deductions.</p>
+      </div>
+
+      <!-- Example calculation -->
+      <div class="section">
+        <div class="section-label">Example</div>
+        <h2>Example: $75,000 → $85,000 raise in Ontario</h2>
+        <div class="example-table-wrap">
+          <table class="example-table" aria-label="Example raise calculation">
+            <caption>Alex's $10,000 gross raise — Ontario 2026</caption>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Current ($75K)</th>
+                <th>New ($85K)</th>
+                <th>On raise</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Gross salary</td><td>$75,000</td><td>$85,000</td><td>+$10,000</td></tr>
+              <tr class="deduct"><td>Federal income tax</td><td>$8,854</td><td>$10,904</td><td>−$2,050</td></tr>
+              <tr class="deduct"><td>Ontario income tax</td><td>$4,247</td><td>$5,164</td><td>−$917</td></tr>
+              <tr class="deduct"><td>CPP / CPP2</td><td>$4,246</td><td>$4,646</td><td>−$400</td></tr>
+              <tr class="deduct"><td>EI premium</td><td>$1,123</td><td>$1,123</td><td>$0 (maxed)</td></tr>
+              <tr><td>Net income</td><td>$56,530</td><td>$63,163</td><td><strong>+$6,633</strong></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p style="font-size:0.875rem;color:var(--text-muted);margin-top:8px;">Alex keeps approximately <strong>$6,633</strong> of a $10,000 gross raise — about <strong>$553/month</strong>. Effective deduction rate on the raise: <strong>33.7%</strong>. Use the calculator above for your exact numbers.</p>
+      </div>
+
+      <!-- 2026 rates used -->
+      <div class="section">
+        <div class="section-label">Rates Reference</div>
+        <h2>2026 rates used in this calculator</h2>
+        <div class="rate-table-wrap">
+          <table class="rate-table" aria-label="2026 tax rates">
+            <caption>2026 rates — CRA / ESDC / Ontario Ministry of Finance</caption>
+            <thead>
+              <tr><th>Component</th><th>Rate / Amount</th><th>Source</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Federal bottom bracket</td><td>14%</td><td>CRA T4032</td></tr>
+              <tr><td>Federal BPA</td><td>$16,452</td><td>CRA</td></tr>
+              <tr><td>Ontario bottom bracket</td><td>5.05%</td><td>Ontario MOF</td></tr>
+              <tr><td>Ontario BPA</td><td>$12,989</td><td>Ontario MOF</td></tr>
+              <tr><td>Ontario surtax threshold 1</td><td>$5,818 (20%)</td><td>Ontario MOF</td></tr>
+              <tr><td>Ontario surtax threshold 2</td><td>$7,446 (+36%)</td><td>Ontario MOF</td></tr>
+              <tr><td>CPP employee rate</td><td>5.95% to $74,600 YMPE</td><td>ESDC</td></tr>
+              <tr><td>CPP2 employee rate</td><td>4.00% to $85,000 YAMPE</td><td>ESDC</td></tr>
+              <tr><td>EI employee rate</td><td>1.63% to $68,900</td><td>ESDC</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="section">
+        <div class="section-label">FAQ</div>
+        <h2>Frequently asked questions</h2>
+        <div class="faq-list">
+
+          <div class="faq-item">
+            <h3>Why is my raise smaller than expected after taxes?</h3>
+            <p>Because raises are taxed at your marginal rate, not your blended average rate. Every dollar of your raise sits on top of your existing income, where the highest brackets apply first. In Ontario, a raise that crosses from $90,000 to $100,000 lands in a combined marginal bracket above 43%.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the effective deduction rate on a raise?</h3>
+            <p>It is the total percentage of your gross raise consumed by taxes and deductions: <code>1 − (net raise ÷ gross raise)</code>. This is not the same as your blended effective tax rate on all income. It isolates the marginal impact on the raise amount only.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Does CPP or EI affect my raise calculation?</h3>
+            <p>Only if your salary is below the ceiling. CPP applies on earnings between $3,500 and $74,600 (2026 YMPE). CPP2 applies between $74,600 and $85,000. EI premiums apply on earnings up to $68,900. If your current salary already exceeds these ceilings, additional CPP or EI will not be deducted from your raise.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Is this calculator accurate for 2026?</h3>
+            <p>Yes. It uses 2026 CRA federal brackets (14% bottom rate), 2026 Ontario provincial brackets, 2026 Ontario surtax thresholds ($5,818 and $7,446), and 2026 ESDC CPP/EI rates. Sources: CRA T4032-ON January 2026, Ontario Ministry of Finance 2026.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>My employer quoted me a raise in monthly terms. How do I use this?</h3>
+            <p>Multiply the monthly amount by 12 to get the annual gross. For example, a "$500/month raise" is approximately $6,000/year gross. Enter your current annual salary and add $6,000 for the new salary field.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>Can I reduce the tax impact of a raise?</h3>
+            <p>Yes — the most effective tool is an RRSP contribution. RRSP deductions reduce your taxable income, which can lower the amount of your raise subject to higher brackets. Contributing the raise amount to an RRSP defers the tax entirely until withdrawal.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What does this calculator not model?</h3>
+            <p>RRSP, TFSA, FHSA, or pension deductions; the Ontario Health Premium (up to $900/year); other non-refundable credits (childcare, disability, tuition, union dues); Quebec parental insurance (QPIP). This calculator is Ontario-specific only.</p>
+          </div>
+
+          <div class="faq-item">
+            <h3>What is the Ontario surtax and does it affect my raise?</h3>
+            <p>The Ontario surtax is an additional tax on top of Ontario provincial tax — applied when your Ontario tax payable exceeds $5,818 (20% surtax) or $7,446 (additional 36% = 56% total). This typically affects incomes above $94,000–$100,000. If your raise pushes Ontario tax above these thresholds, the effective rate on your raise increases significantly.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Related tools -->
+      <div class="section">
+        <div class="section-label">Canadian Calculator Network</div>
+        <h2>Related Ontario &amp; Canadian calculators</h2>
+        <p>All tools in the Calc-HQ.ca network use 2026 CRA and ESDC rates. Jurisdiction-specific. No account required.</p>
+        <div class="network-tools" id="related-tools">
+          <!-- Populated by network.js -->
+        </div>
+        <p class="hub-link">All calculators: <a href="https://calc-hq.ca" target="_blank" rel="noopener">calc-hq.ca</a></p>
+      </div>
+
+    </div><!-- /content-width -->
+  </div><!-- /container -->
+</div><!-- /page-content -->
+
+<!-- Ad slot: pre-footer -->
+<div class="container">
+  <div class="ad-unit" aria-hidden="true">
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-7744853829365165"
+         data-ad-slot="auto"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <span class="logo-icon">🍁</span>
+          Ontario Raise Calculator
+        </div>
+        <p>Find out how much of your raise you actually keep after Ontario income tax, federal tax, CPP, and EI deductions. 2026 CRA and ESDC rates.</p>
+        <p style="margin-top:10px;">Part of the <a href="https://calc-hq.ca" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.55)">Calc-HQ.ca</a> Canadian calculator network.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Pages</h4>
+        <a href="about.html">About</a>
+        <a href="faq.html">FAQ</a>
+        <a href="contact.html">Contact</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="disclaimer.html">Disclaimer</a>
+      </div>
+      <div class="footer-col">
+        <h4>Network</h4>
+        <a href="https://calc-hq.ca" target="_blank" rel="noopener">Calc-HQ.ca Hub</a>
+        <a href="https://ontariotakehomecalc.ca" target="_blank" rel="noopener">Ontario Take-Home Pay</a>
+        <a href="https://ontarioincometaxcalc.ca" target="_blank" rel="noopener">Ontario Income Tax</a>
+        <a href="https://cppcalc.ca" target="_blank" rel="noopener">CPP Calculator</a>
+        <a href="https://eicalc.ca" target="_blank" rel="noopener">EI Calculator</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Ontario Raise Calculator — Ontario, Canada</span>
+      <span>Estimates only. Not tax advice. <a href="https://calc-hq.ca" target="_blank" rel="noopener">calc-hq.ca</a></span>
+    </div>
+  </div>
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/calculator.js"></script>
+<script src="js/network.js"></script>
+
+<!-- Wire up results display to calculator.js -->
+<script>
+(function() {
+  // calculator.js uses calculateRaise() which targets DOM ids directly.
+  // Wire results section visibility toggle.
+  var origCalc = window.calculateRaise;
+  if (typeof origCalc === 'function') {
+    // Override result section show — calculator.js already does resultEl.hidden = false
+    // Nothing extra needed; calculator.js targets #result-section directly.
+  }
+
+  // Sync effective rate chip
+  var observer = new MutationObserver(function() {
+    var rateEl = document.getElementById('res-effective-rate');
+    var chipEl = document.getElementById('res-effective-rate-chip');
+    if (rateEl && chipEl && rateEl.textContent !== '—') {
+      chipEl.textContent = rateEl.textContent + ' taken by deductions';
+    }
+  });
+  var rateEl = document.getElementById('res-effective-rate');
+  if (rateEl) observer.observe(rateEl, { childList: true, characterData: true, subtree: true });
+})();
+</script>
+
+</body>
+</html>
