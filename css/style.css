@@ -787,7 +787,9 @@ select {
 
 /* ─── RESPONSIVE ──────────────────────────────────────────────────────────────── */
 @media (max-width: 768px) {
-  .header-nav { display: none; }
+  .header-inner { height: auto; padding-block: 8px; flex-wrap: wrap; gap: 6px; }
+  .header-nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  .header-nav a { font-size: 0.78rem; padding: 4px 8px; }
   .form-grid { grid-template-columns: 1fr; gap: 16px; }
   .calc-form-section, .calc-results-section { padding: 24px 20px; }
   .period-grid { grid-template-columns: 1fr 1fr; }
