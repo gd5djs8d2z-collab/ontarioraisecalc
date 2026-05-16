@@ -11,28 +11,28 @@
 
 const NETWORK_TOOLS = [
   {
-    name: "Ontario Take-Home Pay Calculator",
+    name: "Ontario Take Home Calc",
     desc: "Estimate your net take-home pay after federal tax, Ontario provincial tax, CPP, EI, and the Ontario Health Premium.",
     url: "https://ontariotakehomecalc.ca",
     domain: "ontariotakehomecalc.ca",
     live: true
   },
   {
-    name: "Ontario Income Tax Calculator",
+    name: "Ontario Income Tax Calc",
     desc: "See your full federal + Ontario tax breakdown, marginal rates, surtax, and OHP by income level.",
     url: "https://ontarioincometaxcalc.ca",
     domain: "ontarioincometaxcalc.ca",
     live: true
   },
   {
-    name: "CPP Contribution Calculator",
+    name: "CPP Calc",
     desc: "Calculate your CPP and CPP2 contributions for 2026 — employee, employer, and self-employed.",
     url: "https://cppcalc.ca",
     domain: "cppcalc.ca",
     live: true
   },
   {
-    name: "EI Premium Calculator",
+    name: "EI Calc",
     desc: "Estimate your Employment Insurance premiums and eligibility hours using 2026 ESDC rates.",
     url: "https://eicalc.ca",
     domain: "eicalc.ca",
