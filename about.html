@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Ontario Raise Calc</title>
-  <meta name="description" content="About Ontario Raise Calc — how it models the marginal tax impact of a salary increase, CPP and EI ceiling effects, and the 2026 federal rate change that benefits lower earners.">
+  <meta name="description" content="About Ontario Raise Calc — what it estimates, who it's for, and why raises feel smaller after deductions. 2026 Ontario and federal tax rates.">
   <link rel="canonical" href="https://ontarioraisecalc.ca/about.html">
   <link rel="stylesheet" href="css/style.css">
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7744853829365165" crossorigin="anonymous"></script>
@@ -14,7 +14,7 @@
     "@type": "WebPage",
     "name": "About | Ontario Raise Calc",
     "url": "https://ontarioraisecalc.ca/about.html",
-    "description": "About Ontario Raise Calc — how it models the marginal tax impact of a salary increase, CPP and EI ceiling effects, and the 2026 federal rate change.",
+    "description": "About Ontario Raise Calc — what it estimates, who it's for, and why raises feel smaller after deductions.",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Ontario Raise Calc",
@@ -41,87 +41,65 @@
 
 <section class="page-hero">
   <div class="container">
-    <h1>About This Calculator</h1>
-    <p>A raise calculator built around marginal tax rates — not gross salary estimates.</p>
+    <h1>About Ontario Raise Calc</h1>
+    <p>What this calculator estimates, who it's for, and why your raise feels smaller than expected</p>
   </div>
 </section>
 
 <div class="page-body">
 
-  <h2>Why a Raise Calculator Is Different</h2>
-  <p>Most salary calculators show you an estimated take-home pay for a given gross income. This tool does something different: it focuses on the portion of income that has changed — the raise itself — and shows you exactly how much of that increase you actually keep after Ontario and federal tax, CPP contributions, and EI premiums are applied to your new earnings.</p>
-  <p>That distinction matters. The tax rate on your raise is not the same as your overall effective rate. Because Canada uses a progressive tax system, each dollar of a raise is taxed at your marginal rate — the rate that applies to the top slice of your income. For an Ontario employee earning $75,000 and receiving a $10,000 raise, the relevant rates are 20.5% federal and 9.15% provincial, not the blended effective rate across their full salary. This calculator models that correctly.</p>
+    <h2>Why This Calculator Exists</h2>
+    <p>Most salary calculators show you an estimated take-home pay for a given gross income. Ontario Raise Calc does something different: it focuses on the portion of income that has changed — the raise itself — and shows you exactly how much of that increase you actually keep after Ontario and federal tax, CPP contributions, and EI premiums are applied to your new earnings.</p>
+    <p>That distinction matters. The tax rate on your raise is not the same as your overall effective rate. Because Canada uses a progressive tax system, each dollar of a raise is taxed at your marginal rate — the rate that applies to the top slice of your income. This calculator models that correctly.</p>
 
-  <h2>The CPP and EI Ceiling Effect</h2>
-  <p>Two of the deductions Canadians pay — CPP contributions and EI premiums — have annual maximums. Once your earnings cross those thresholds, the deductions stop for the rest of the year. In 2026, the CPP1 ceiling is $74,600 (YMPE), with a CPP2 tier applying on earnings up to $85,000 (YAMPE). The EI maximum insurable earnings are $68,900.</p>
-  <p>A raise that pushes your gross income across one of these thresholds has a different net impact than a raise that falls entirely below them. If you were previously earning $65,000 and receive a $20,000 raise, part of that raise interacts with the CPP1 ceiling, and the CPP2 rate applies to earnings between $74,600 and $85,000. This calculator accounts for those crossover effects when comparing your current and new salary — which a simple take-home pay estimator does not.</p>
+    <h2>What Ontario Raise Calc Estimates</h2>
+    <p>When you enter your current salary and new salary, the calculator estimates the impact of the raise on each of the following:</p>
+    <ul>
+      <li><strong>Federal income tax</strong> — using 2026 CRA brackets and the basic personal amount</li>
+      <li><strong>Ontario provincial income tax</strong> — including 2026 Ontario brackets and the Ontario basic personal amount</li>
+      <li><strong>Ontario surtax</strong> — the additional tax on Ontario tax above $5,818 (20%) and $7,446 (+36%)</li>
+      <li><strong>CPP contributions</strong> — employee CPP1 at 5.95% to the $74,600 YMPE, plus CPP2 at 4.00% between $74,600 and $85,000</li>
+      <li><strong>EI premiums</strong> — at 1.63% on insurable earnings up to $68,900</li>
+      <li><strong>Annual net raise</strong> — the dollar amount you keep after all deductions on the raise</li>
+      <li><strong>Monthly increase</strong> — your net raise divided across 12 months</li>
+      <li><strong>Per-pay increase</strong> — your net raise divided by your selected pay frequency</li>
+      <li><strong>Deduction percentage</strong> — the percentage of your gross raise consumed by combined deductions</li>
+    </ul>
+    <p>Everything runs in your browser. No data is sent anywhere or stored.</p>
 
-  <h2>The 2026 Federal Rate Change</h2>
-  <p>Starting in 2026, the bottom federal income tax bracket rate dropped from 14.5% to 14%. For employees earning below the first bracket threshold of $57,375, this means every dollar of a raise in that range is taxed at the new lower rate. The calculator uses the 2026 rates published by the Canada Revenue Agency — including this reduction — rather than carrying forward the 2024 or 2025 structure.</p>
+    <h2>Who This Calculator Is For</h2>
+    <p>This tool is built for Ontario employees who are receiving or considering a salary increase and want to understand the real after-tax impact. It works for anyone paid through employer payroll — salaried or hourly — who wants to see what a raise actually means for their take-home pay.</p>
+    <p>It is not designed for self-employed individuals, who face different CPP and tax rules. Self-employment income requires a separate tool with different deduction calculations.</p>
 
-  <h2>How the Calculation Works</h2>
-  <p>You enter your current gross annual salary and your new gross annual salary. The calculator applies the full 2026 federal and Ontario tax bracket schedule, CPP contribution rules (including CPP2 where applicable), and EI premium rates to both figures. It then computes the difference in net pay — annual, monthly, and per pay period — and shows what each individual deduction contributes to that difference.</p>
-  <p>Every rate, threshold, and formula is stored in a single configuration file and referenced consistently throughout the tool. There are no hardcoded values in the calculation logic.</p>
+    <h2>Why Raises Feel Smaller Than Expected</h2>
+    <p>A raise on paper is not the same as a raise in your bank account. Several factors reduce the amount you actually receive:</p>
+    <ul>
+      <li><strong>Gross raise ≠ take-home raise.</strong> Your offer letter shows the gross amount. Your paycheque reflects the net — after income tax, CPP, and EI each take their share.</li>
+      <li><strong>Deductions increase with income.</strong> CPP and EI contributions rise as your earnings grow, until you hit their annual ceilings. A raise that pushes you past those thresholds changes the mix of deductions on the additional income.</li>
+      <li><strong>Tax brackets are marginal.</strong> Your raise is not taxed at your average rate — it is taxed at the marginal rate that applies to the highest bracket your new income reaches. In Ontario, that combined rate can exceed 43% for mid-to-high earners.</li>
+      <li><strong>CPP and CPP2 increase with earnings.</strong> CPP1 applies to earnings up to $74,600. CPP2 applies between $74,600 and $85,000. If your raise pushes you into the CPP2 range, a second layer of pension contributions kicks in on top of CPP1.</li>
+    </ul>
 
-  <h2>What the Results Tell You</h2>
-  <p>The output shows your raise split into what you keep and what goes to each deduction category. It also shows your net pay increase as a percentage of your gross raise — your "raise retention rate." For most Ontario employees in mid-income ranges, this figure falls between 58% and 68%, depending on where the raise lands relative to bracket thresholds and CPP/EI ceilings.</p>
-  <p>Results are estimates based on standard employment assumptions and the basic personal amounts for 2026. They do not account for RRSP contributions, union dues, employer-paid benefits, or TD1 claims beyond the basic amount. Actual payroll outcomes will vary based on your specific employment situation.</p>
+    <h2>When This Calculator Is Useful</h2>
+    <ul>
+      <li><strong>Evaluating a raise</strong> — See exactly how much of a proposed salary increase you'll keep after all deductions</li>
+      <li><strong>Comparing job offers</strong> — Calculate the after-tax difference between two salary figures to make an informed decision</li>
+      <li><strong>Promotion planning</strong> — Understand the real financial impact of a promotion before accepting new responsibilities</li>
+      <li><strong>Budgeting after a raise</strong> — Know your actual monthly and per-pay increase so you can plan spending and savings accurately</li>
+      <li><strong>Understanding paycheque changes</strong> — See why the increase in your net pay is smaller than the gross raise amount on your offer</li>
+    </ul>
 
-  <h2>Data Sources and Accuracy</h2>
-  <p>All rates used in this calculator are sourced from official 2026 publications:</p>
-  <ul>
-    <li>CRA — Federal income tax rates and brackets (2026)</li>
-    <li>CRA — Ontario provincial income tax rates (2026)</li>
-    <li>CRA — CPP contribution rates, YMPE ($74,600) and YAMPE ($85,000)</li>
-    <li>ESDC — EI premium rate ($1.63 per $100) and maximum insurable earnings ($68,900)</li>
-    <li>Ontario Ministry of Finance — Ontario Health Premium schedule</li>
-  </ul>
-  <p>The calculator is maintained by the <a href="https://calc-hq.ca" target="_blank" rel="noopener">Calc-HQ.ca</a> network — an independent Canadian financial utility publisher focused on browser-based tools for Canadian employees and taxpayers. Questions or corrections can be sent to <a href="mailto:partnerships@calc-hq.ca">partnerships@calc-hq.ca</a>.</p>
+    <div class="info-box">
+      <a href="https://calc-hq.ca/methodology/raise/">Full methodology: Ontario Raise Calculator – Calc-HQ.ca</a>
+    </div>
 
-  <h2>Privacy</h2>
-  <p>Nothing you enter into this calculator is transmitted, collected, or stored. All calculations happen entirely in your browser. No account is required and no cookies are used for tracking. See the <a href="privacy-policy.html">Privacy Policy</a> for full details.</p>
+    <h2>Part of the Calc-HQ.ca Network</h2>
+    <p>This calculator is part of the <a href="https://calc-hq.ca/">Calc-HQ.ca</a> network of Canadian tax and payroll calculators. All calculators in the network use CRA-sourced rates and follow CRA-published calculation methodologies.</p>
 
 </div>
 
 <footer class="site-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="logo">🍁 Ontario Raise Calc</div>
-        <p>See how much of your raise you actually keep after Ontario income tax, federal tax, CPP, and EI. 2026 CRA and ESDC rates.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Pages</h4>
-        <a href="/">Calculator</a>
-        <a href="about.html">About</a>
-        <a href="faq.html">FAQ</a>
-        <a href="contact.html">Contact</a>
-      </div>
-      <div class="footer-col">
-        <h4>Legal</h4>
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="disclaimer.html">Disclaimer</a>
-        <a href="terms.html">Terms of Use</a>
-      </div>
-      <div class="footer-col">
-        <h4>RELATED TOOLS</h4>
-        <a href="https://ontariotakehomecalc.ca" rel="noopener">OntarioTakeHomeCalc.ca — Estimate your Ontario net pay after all deductions</a>
-        <a href="https://ontarioincometaxcalc.ca" rel="noopener">OntarioIncomeTaxCalc.ca — See your full federal + Ontario tax breakdown</a>
-        <a href="https://marginaltaxcalc.ca" rel="noopener">MarginalTaxCalc.ca — Calculate your marginal tax rate in Ontario</a>
-      </div>
-      <div class="footer-col">
-        <h4>MORE TOOLS</h4>
-        <a href="https://calc-hq.ca" class="more-tools-link" target="_blank" rel="noopener noreferrer">
-          <span class="more-tools-title">Calc-HQ.ca</span>
-          <span class="subtext">Canadian payroll, tax, and contribution calculators</span>
-        </a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <span>© 2026 Ontario Raise Calc — Ontario, Canada</span>
-      <span>Estimates only. Not tax advice. <a href="https://calc-hq.ca" target="_blank" rel="noopener">calc-hq.ca</a></span>
-    </div>
-  </div>
+  <div id="network-footer"></div>
 </footer>
 
 <script src="js/network.js"></script>
