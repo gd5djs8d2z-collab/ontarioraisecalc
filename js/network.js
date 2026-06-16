@@ -11,28 +11,48 @@
 
 const NETWORK_TOOLS = [
   {
-    name: "Ontario Take Home Calc",
-    url: "https://ontariotakehomecalc.ca",
-    live: true
-  },
-  {
-    name: "Ontario Income Tax Calc",
+    name: "Ontario Income Tax Calculator",
     url: "https://ontarioincometaxcalc.ca",
     live: true
   },
   {
-    name: "Ontario Marginal Tax Calc",
+    name: "Ontario Take-Home Pay Calculator",
+    url: "https://ontariotakehomecalc.ca",
+    live: true
+  },
+  {
+    name: "Ontario Bonus Tax Calculator",
+    url: "https://ontariobonustaxcalc.ca",
+    live: true
+  },
+  {
+    name: "Ontario Marginal Tax Calculator",
     url: "https://ontariomarginaltaxcalc.ca",
     live: true
   },
   {
-    name: "CPP Calc",
-    url: "https://cppcalc.ca",
+    name: "Ontario Commission Tax Calculator",
+    url: "https://ontariocommissiontaxcalc.ca",
     live: true
   },
   {
-    name: "EI Calc",
-    url: "https://eicalc.ca",
+    name: "Ontario Severance Pay Calculator",
+    url: "https://ontarioseverancepaycalc.ca",
+    live: true
+  },
+  {
+    name: "Ontario Termination Pay Calculator",
+    url: "https://ontarioterminationpaycalc.ca",
+    live: true
+  },
+  {
+    name: "Ontario Self-Employed Tax Calculator",
+    url: "https://ontarioselfemployedtaxcalc.ca",
+    live: true
+  },
+  {
+    name: "Ontario Raise Calculator",
+    url: "https://ontarioraisecalc.ca",
     live: true
   }
 ];
